@@ -3,50 +3,145 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Frutería Del Valle | Fruta Fresca</title>
+  <title>La Huerta Viva | Fruta Fresca de Temporada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="header">
-    <div class="container header-content">
-      <h1> Frutería Del Valle</h1>
-      <button id="cart-toggle-btn" class="cart-btn">
-        🛒 Carrito <span id="cart-count" class="badge">0</span>
+  <!-- Barra superior de anuncios -->
+  <aside class="announcement-bar">
+    🌱 Recolectado bajo pedido &bull; Entrega en frío 24h &bull; <strong>Envío gratis desde 25€</strong>
+  </aside>
+
+  <!-- Navegación principal -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand">
+        <span class="brand-icon">🌿</span>
+        <span class="brand-text">La Huerta<strong>Viva</strong></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#catalogo" class="nav-link active">Catálogo</a>
+        <a href="#ventajas" class="nav-link">Nuestra Huerta</a>
+      </nav>
+
+      <button id="cart-toggle-btn" class="cart-trigger" aria-label="Abrir carrito">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-label">Cesta</span>
+        <span id="cart-count" class="cart-badge">0</span>
       </button>
     </div>
   </header>
 
-  <main class="container main-content">
-    <section class="catalog">
-      <h2>Nuestros Productos Frescos</h2>
-      <div id="products-grid" class="products-grid">
-        <!-- Renderizado dinámicamente desde main.js -->
+  <!-- Hero principal -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="hero-pill">☀️ Cosecha de hoy</span>
+        <h1>Fruta de campo auténtica, con el sabor de verdad.</h1>
+        <p>Directa de pequeños agricultores locales a tu cocina en menos de 24 horas. Sin maduración artificial en cámaras.</p>
+        <div class="hero-actions">
+          <a href="#catalogo" class="btn-primary">Ver frutas de temporada</a>
+          <span class="hero-note">✓ 100% Devolución garantizada si no te enamora</span>
+        </div>
       </div>
-    </section>
+      <div class="hero-banner-image">
+        <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=800&q=80" alt="Cesta de frutas frescas variadas" />
+      </div>
+    </div>
+  </section>
 
-    <!-- carrito -->
-    <aside id="cart-modal" class="cart-modal hidden">
-      <div class="cart-content">
-        <div class="cart-header">
-          <h3>Tu Cesta</h3>
-          <button id="close-cart-btn" class="close-btn">&times;</button>
-        </div>
-        <ul id="cart-items" class="cart-items">
-          <!-- Renderizado dinámicamente desde main.js -->
-        </ul>
-        <div class="cart-footer">
-          <div class="total-row">
-            <span>Total:</span>
-            <span id="cart-total" class="total-price">0.00 €</span>
-          </div>
-          <button id="checkout-btn" class="btn-checkout">Finalizar Pedido</button>
-        </div>
+  <!-- Sellos de confianza -->
+  <section id="ventajas" class="features container">
+    <div class="feature-card">
+      <span class="feature-icon">🚜</span>
+      <div>
+        <h4>Del árbol a tu mesa</h4>
+        <p>Recolectamos solo cuando la fruta está en su punto óptimo.</p>
       </div>
-    </aside>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">❄️</span>
+      <div>
+        <h4>Transporte refrigerado</h4>
+        <p>Cadena de frío controlada para conservar aroma y textura intactos.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">♻️</span>
+      <div>
+        <h4>Embalaje Zero Plastic</h4>
+        <p>Cajas de cartón reciclable y viruta vegetal protectora.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catálogo de productos -->
+  <main id="catalogo" class="catalog-section container">
+    <div class="catalog-header">
+      <div>
+        <h2>Nuestra Selección Fresca</h2>
+        <p>Elige por kilos o piezas según tus necesidades semanales.</p>
+      </div>
+
+      <!-- Filtros por categoría -->
+      <div class="filters-container">
+        <button class="filter-btn active" data-category="todos">Todos</button>
+        <button class="filter-btn" data-category="citricos">Cítricos</button>
+        <button class="filter-btn" data-category="temporada">Temporada</button>
+        <button class="filter-btn" data-category="tropical">Tropicales</button>
+        <button class="filter-btn" data-category="bio">100% Bio</button>
+      </div>
+    </div>
+
+    <div id="products-grid" class="products-grid">
+      <!-- Inyectado por main.js -->
+    </div>
   </main>
 
+  <!-- Carrito lateral (Off-canvas Drawer) -->
+  <div id="cart-overlay" class="cart-overlay hidden"></div>
+  <aside id="cart-drawer" class="cart-drawer">
+    <div class="drawer-header">
+      <h3>Tu Pedido Fresco</h3>
+      <button id="close-cart-btn" class="close-drawer" aria-label="Cerrar">&times;</button>
+    </div>
+
+    <!-- Barra de progreso para envío gratis -->
+    <div class="shipping-progress-box">
+      <p id="shipping-message">Añade <strong>25.00 €</strong> más para <strong>Envío Gratis</strong></p>
+      <div class="progress-bar-track">
+        <div id="shipping-progress-fill" class="progress-bar-fill" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <ul id="cart-items" class="drawer-items">
+      <!-- Elementos del carrito inyectados por main.js -->
+    </ul>
+
+    <div class="drawer-footer">
+      <div class="summary-line">
+        <span>Subtotal</span>
+        <span id="cart-total" class="amount">0.00 €</span>
+      </div>
+      <p class="summary-shipping-note">Impuestos incluidos &bull; Gastos de envío calculados al finalizar</p>
+      <button id="checkout-btn" class="btn-checkout">Continuar con el Pago</button>
+    </div>
+  </aside>
+
+  <!-- Toast flotante de confirmación -->
+  <div id="toast" class="toast hidden">
+    <span class="toast-icon">✨</span>
+    <span id="toast-message">Producto añadido</span>
+  </div>
+
   <footer class="footer">
-    <p>&copy; 2026 Frutería Del Valle — Productos directos del campo</p>
+    <div class="container footer-content">
+      <p>© 2026 <strong>La Huerta Viva S.L.</strong> — Comprometidos con el cultivo sostenible y el comercio justo.</p>
+    </div>
   </footer>
 
   <script src="main.js"></script>
