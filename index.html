@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frutería Del Valle | Fruta Fresca</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <h1> Frutería Del Valle</h1>
+      <button id="cart-toggle-btn" class="cart-btn">
+        🛒 Carrito <span id="cart-count" class="badge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="catalog">
+      <h2>Nuestros Productos Frescos</h2>
+      <div id="products-grid" class="products-grid">
+        <!-- Renderizado dinámicamente desde main.js -->
+      </div>
+    </section>
+
+    <!-- carrito -->
+    <aside id="cart-modal" class="cart-modal hidden">
+      <div class="cart-content">
+        <div class="cart-header">
+          <h3>Tu Cesta</h3>
+          <button id="close-cart-btn" class="close-btn">&times;</button>
+        </div>
+        <ul id="cart-items" class="cart-items">
+          <!-- Renderizado dinámicamente desde main.js -->
+        </ul>
+        <div class="cart-footer">
+          <div class="total-row">
+            <span>Total:</span>
+            <span id="cart-total" class="total-price">0.00 €</span>
+          </div>
+          <button id="checkout-btn" class="btn-checkout">Finalizar Pedido</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Frutería Del Valle — Productos directos del campo</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
