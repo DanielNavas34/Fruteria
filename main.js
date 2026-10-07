@@ -93,30 +93,67 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==============================================================
-  // 2. Lógica del Menú Móvil (Hamburguesa)
+  // 2. Control de Navbar (Scroll y Menús)
   // ==============================================================
+  const navbar = document.getElementById('main-navbar');
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const appleMenuBtn = document.getElementById('apple-menu-btn');
   const navLinks = document.getElementById('nav-links');
   const navItems = document.querySelectorAll('.nav-link');
 
+  // Lógica de Scroll (Mostrar/Ocultar Manzana)
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+      // Si el usuario vuelve arriba, cerramos el menú para evitar conflictos visuales
+      if(navLinks.classList.contains('nav-active') && !mobileMenuBtn.classList.contains('is-active')) {
+         navLinks.classList.remove('nav-active');
+         if(appleMenuBtn) appleMenuBtn.querySelector('.apple-text').textContent = 'MENÚ';
+      }
+    }
+  });
+
+  // Toggle Menú Hamburguesa (Móviles - Normal)
   if (mobileMenuBtn && navLinks) {
     mobileMenuBtn.addEventListener('click', () => {
       mobileMenuBtn.classList.toggle('is-active');
       navLinks.classList.toggle('nav-active');
-      
-      const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true' || false;
-      mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
-    });
-
-    navItems.forEach(item => {
-      item.addEventListener('click', () => {
-        mobileMenuBtn.classList.remove('is-active');
-        navLinks.classList.remove('nav-active');
-        mobileMenuBtn.setAttribute('aria-expanded', false);
-      });
     });
   }
 
+  // Toggle Botón Manzana (PC y Móviles - Scrolled)
+  if (appleMenuBtn && navLinks) {
+    appleMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('nav-active');
+      
+      // Animamos el texto para que se convierta en una X al abrir
+      const appleText = appleMenuBtn.querySelector('.apple-text');
+      if (navLinks.classList.contains('nav-active')) {
+        appleText.textContent = 'X';
+        appleText.style.fontSize = '1.25rem';
+      } else {
+        appleText.textContent = 'MENÚ';
+        appleText.style.fontSize = window.innerWidth >= 768 ? '0.85rem' : '0.75rem';
+      }
+    });
+  }
+
+  // Cerrar menú al hacer clic en un enlace
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      if(mobileMenuBtn) mobileMenuBtn.classList.remove('is-active');
+      navLinks.classList.remove('nav-active');
+      
+      // Restaurar texto de la manzana
+      if(appleMenuBtn) {
+         const appleText = appleMenuBtn.querySelector('.apple-text');
+         appleText.textContent = 'MENÚ';
+         appleText.style.fontSize = window.innerWidth >= 768 ? '0.85rem' : '0.75rem';
+      }
+    });
+  });
   // ==============================================================
   // 3. Renderizado del Catálogo (Visual y Estático)
   // ==============================================================

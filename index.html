@@ -44,10 +44,11 @@
   </div>
 
   <!-- Navegación principal -->
-  <header class="navbar">
+ <!-- Navegación principal -->
+  <header id="main-navbar" class="navbar">
+    
+    <!-- Contenedor Normal (Logo, Hamburguesa) -->
     <div class="container nav-container">
-      
-      <!-- Marca textual (Logo manzana hecho con CSS puro) -->
       <a href="#inicio" class="brand-logo" aria-label="Ir al inicio">
         <div class="brand-shape"></div>
         <div class="brand-text-group">
@@ -56,21 +57,28 @@
         </div>
       </a>
 
-      <!-- Menú móvil (Hamburguesa) -->
+      <!-- Menú móvil normal (Hamburguesa) -->
       <button id="mobile-menu-btn" class="hamburger-btn" aria-label="Abrir menú" aria-expanded="false">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
       </button>
-
-      <nav id="nav-links" class="nav-links">
-        <a href="#inicio" class="nav-link">Inicio</a>
-        <a href="#frutas" class="nav-link">Frutas</a>
-        <a href="#verduras" class="nav-link">Verduras y hortalizas</a>
-        <a href="#legumbres" class="nav-link">Legumbres</a>
-        <a href="#encuentranos" class="nav-link">Encuéntranos</a>
-      </nav>
     </div>
+
+    <!-- The Fullscreen Menu / Desktop Horizontal Links -->
+    <nav id="nav-links" class="nav-links">
+      <a href="#inicio" class="nav-link">Inicio</a>
+      <a href="#frutas" class="nav-link">Frutas</a>
+      <a href="#verduras" class="nav-link">Verduras y hortalizas</a>
+      <a href="#legumbres" class="nav-link">Legumbres</a>
+      <a href="#sobre-nosotros" class="nav-link">Sobre nosotros</a>
+      <a href="#encuentranos" class="nav-link">Encuéntranos</a>
+    </nav>
+
+    <!-- Botón Manzana Flotante (Visible solo al hacer scroll) -->
+    <button id="apple-menu-btn" class="apple-scrolled-btn" aria-label="Abrir menú flotante">
+      <span class="apple-text">MENÚ</span>
+    </button>
   </header>
 
   <main>
@@ -150,6 +158,33 @@
       </div>
       <div id="grid-legumbres" class="products-grid">
          <!-- Espacio reservado para inyección futura -->
+      </div>
+    </section>
+
+    <!-- Sección Sobre Nosotros -->
+    <section id="sobre-nosotros" class="about-section container">
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="section-header">
+            <h2>Nuestras Raíces</h2>
+          </div>
+          <p>En <strong>Disfruta y Verdura Algeciras</strong>, creemos que la buena alimentación empieza en la tierra. Somos un comercio local nacido con una misión muy clara: devolver el sabor auténtico a las mesas de nuestros vecinos.</p>
+          <p>Seleccionamos cuidadosamente cada pieza para asegurar que todo lo que llega a tu cesta ha sido cultivado con mimo, respetando los tiempos naturales y garantizando la máxima frescura y calidad.</p>
+          
+          <!-- Pequeñas etiquetas (pills) para destacar valores -->
+          <div class="about-badges">
+            <span class="badge-pill">Trato cercano</span>
+            <span class="badge-pill">Calidad superior</span>
+            <span class="badge-pill">Apoyo local</span>
+          </div>
+        </div>
+        
+        <div class="about-image-wrapper">
+          <!-- Fotografía (puedes cambiar la URL por una imagen real tuya) -->
+          <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80" alt="Agricultor mostrando vegetales frescos" class="about-img" loading="lazy">
+          <!-- Círculo decorativo puramente CSS para dar un toque de diseño moderno -->
+          <div class="about-decoration"></div>
+        </div>
       </div>
     </section>
 
