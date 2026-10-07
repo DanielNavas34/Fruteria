@@ -3,144 +3,203 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>La Huerta Viva | Fruta Fresca de Temporada</title>
+  <title>Disfruta y Verdura Algeciras | Frutería Local y Productos Frescos</title>
+  <meta name="description" content="Tu frutería local en Algeciras. Descubre nuestra selección de fruta fresca, verduras y legumbres de máxima calidad." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  
+  <!-- Schema.org LocalBusiness (Con placeholders, sin inventar datos) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Disfruta y Verdura Algeciras",
+    "image": "https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=800&q=80",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "[DIRECCIÓN PENDIENTE]",
+      "addressLocality": "Algeciras",
+      "addressRegion": "Cádiz",
+      "addressCountry": "ES"
+    },
+    "telephone": "[TELÉFONO PENDIENTE]",
+    "openingHours": "[HORARIO PENDIENTE]"
+  }
+  </script>
 </head>
-<body>
-  <!-- Barra superior de anuncios -->
-  <aside class="announcement-bar">
-    🌱 Recolectado bajo pedido &bull; Entrega en frío 24h &bull; <strong>Envío gratis desde 25€</strong>
-  </aside>
+<body id="inicio">
+  
+  <!-- Preloader a pantalla completa -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <h2 class="preloader-title">Fruteando</h2>
+      <div class="loading-track">
+        <div class="loading-bar"></div>
+        <!-- Emojis nativos de frutas avanzando por la barra -->
+        <div class="loading-fruits">🍎🍌🍓</div>
+      </div>
+    </div>
+  </div>
 
   <!-- Navegación principal -->
   <header class="navbar">
     <div class="container nav-container">
-      <a href="#" class="brand">
-        <span class="brand-icon">🌿</span>
-        <span class="brand-text">La Huerta<strong>Viva</strong></span>
+      
+      <!-- Marca textual (Logo manzana hecho con CSS puro) -->
+      <a href="#inicio" class="brand-logo" aria-label="Ir al inicio">
+        <div class="brand-shape"></div>
+        <div class="brand-text-group">
+          <span class="brand-main">Disfruta <span class="brand-y">y</span> Verdura</span>
+          <span class="brand-loc">Algeciras</span>
+        </div>
       </a>
 
-      <nav class="nav-links">
-        <a href="#catalogo" class="nav-link active">Catálogo</a>
-        <a href="#ventajas" class="nav-link">Nuestra Huerta</a>
-      </nav>
-
-      <button id="cart-toggle-btn" class="cart-trigger" aria-label="Abrir carrito">
-        <span class="cart-icon">🛒</span>
-        <span class="cart-label">Cesta</span>
-        <span id="cart-count" class="cart-badge">0</span>
+      <!-- Menú móvil (Hamburguesa) -->
+      <button id="mobile-menu-btn" class="hamburger-btn" aria-label="Abrir menú" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
+
+      <nav id="nav-links" class="nav-links">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#frutas" class="nav-link">Frutas</a>
+        <a href="#verduras" class="nav-link">Verduras y hortalizas</a>
+        <a href="#legumbres" class="nav-link">Legumbres</a>
+        <a href="#encuentranos" class="nav-link">Encuéntranos</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Hero principal -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <span class="hero-pill">☀️ Cosecha de hoy</span>
-        <h1>Fruta de campo auténtica, con el sabor de verdad.</h1>
-        <p>Directa de pequeños agricultores locales a tu cocina en menos de 24 horas. Sin maduración artificial en cámaras.</p>
-        <div class="hero-actions">
-          <a href="#catalogo" class="btn-primary">Ver frutas de temporada</a>
-          <span class="hero-note">✓ 100% Devolución garantizada si no te enamora</span>
+  <main>
+    <!-- Hero principal -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <!-- H1 Único en toda la página -->
+          <h1 class="hero-title">
+            <span class="ht-main">Disfruta <span class="ht-y">y</span> Verdura</span>
+            <span class="ht-loc">Algeciras</span>
+          </h1>
+          <p class="hero-subtitle">Fruta, verdura y productos de calidad, cerca de ti.</p>
+          <div class="hero-actions">
+            <a href="#frutas" class="btn-primary">Descubre nuestros productos</a>
+          </div>
+        </div>
+        <div class="hero-banner-image">
+          <!-- Badge Origen 100% España -->
+          <div class="origin-badge">
+            <span class="origin-icon" aria-hidden="true"></span>
+            <span>Origen 100% España</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=800&q=80" alt="Exposición de frutería fresca" />
         </div>
       </div>
-      <div class="hero-banner-image">
-        <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=800&q=80" alt="Cesta de frutas frescas variadas" />
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Sellos de confianza -->
-  <section id="ventajas" class="features container">
-    <div class="feature-card">
-      <span class="feature-icon">🚜</span>
-      <div>
-        <h4>Del árbol a tu mesa</h4>
-        <p>Recolectamos solo cuando la fruta está en su punto óptimo.</p>
+    <!-- Sellos de confianza -->
+    <section class="features container" aria-label="Nuestros valores">
+      <div class="feature-card">
+        <span class="feature-icon" aria-hidden="true">🚜</span>
+        <div>
+          <h4>Del árbol a tu mesa</h4>
+          <p>Recolectamos solo cuando la fruta está en su punto óptimo.</p>
+        </div>
       </div>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">❄️</span>
-      <div>
-        <h4>Transporte refrigerado</h4>
-        <p>Cadena de frío controlada para conservar aroma y textura intactos.</p>
+      <div class="feature-card">
+        <span class="feature-icon" aria-hidden="true">❄️</span>
+        <div>
+          <h4>Transporte refrigerado</h4>
+          <p>Cadena de frío controlada para conservar aroma y textura intactos.</p>
+        </div>
       </div>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">♻️</span>
-      <div>
-        <h4>Embalaje Zero Plastic</h4>
-        <p>Cajas de cartón reciclable y viruta vegetal protectora.</p>
+      <div class="feature-card">
+        <span class="feature-icon" aria-hidden="true">♻️</span>
+        <div>
+          <h4>Embalaje Zero Plastic</h4>
+          <p>Cajas de cartón reciclable y viruta vegetal protectora.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Catálogo de productos -->
-  <main id="catalogo" class="catalog-section container">
-    <div class="catalog-header">
-      <div>
-        <h2>Nuestra Selección Fresca</h2>
-        <p>Elige por kilos o piezas según tus necesidades semanales.</p>
+    <!-- Sección Frutas -->
+    <section id="frutas" class="catalog-section container">
+      <div class="section-header">
+        <h2>Frutas Frescas</h2>
       </div>
-
-      <!-- Filtros por categoría -->
-      <div class="filters-container">
-        <button class="filter-btn active" data-category="todos">Todos</button>
-        <button class="filter-btn" data-category="citricos">Cítricos</button>
-        <button class="filter-btn" data-category="temporada">Temporada</button>
-        <button class="filter-btn" data-category="tropical">Tropicales</button>
-        <button class="filter-btn" data-category="bio">100% Bio</button>
-      </div>
-    </div>
-
-    <div id="products-grid" class="products-grid">
       <!-- Inyectado por main.js -->
-    </div>
+      <div id="grid-frutas" class="products-grid"></div>
+    </section>
+
+    <!-- Sección Verduras y Hortalizas -->
+    <section id="verduras" class="catalog-section container">
+      <div class="section-header">
+        <h2>Verduras y Hortalizas</h2>
+      </div>
+      <div id="grid-verduras" class="products-grid">
+        <!-- Espacio reservado para inyección futura -->
+      </div>
+    </section>
+
+    <!-- Sección Legumbres -->
+    <section id="legumbres" class="catalog-section container">
+      <div class="section-header">
+        <h2>Legumbres de Calidad</h2>
+      </div>
+      <div id="grid-legumbres" class="products-grid">
+         <!-- Espacio reservado para inyección futura -->
+      </div>
+    </section>
+
+    <!-- Sección Encuéntranos -->
+    <section id="encuentranos" class="contact-section container">
+      <div class="section-header">
+        <h2>Visítanos en Algeciras</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="info-block">
+            <h3>Dirección</h3>
+            <p>[DIRECCIÓN PENDIENTE]<br>Algeciras, Cádiz</p>
+          </div>
+          <div class="info-block">
+            <h3>Horario de apertura</h3>
+            <p>[HORARIO PENDIENTE]</p>
+          </div>
+          <div class="info-block">
+            <h3>Atención al cliente</h3>
+            <p>[TELÉFONO PENDIENTE]</p>
+          </div>
+        </div>
+        <div class="map-container">
+          <div class="map-placeholder">
+            <span class="map-icon" aria-hidden="true">📍</span>
+            <p>Mapa interactivo<br><small>[UBICACIÓN PENDIENTE]</small></p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- Carrito lateral (Off-canvas Drawer) -->
-  <div id="cart-overlay" class="cart-overlay hidden"></div>
-  <aside id="cart-drawer" class="cart-drawer">
-    <div class="drawer-header">
-      <h3>Tu Pedido Fresco</h3>
-      <button id="close-cart-btn" class="close-drawer" aria-label="Cerrar">&times;</button>
-    </div>
-
-    <!-- Barra de progreso para envío gratis -->
-    <div class="shipping-progress-box">
-      <p id="shipping-message">Añade <strong>25.00 €</strong> más para <strong>Envío Gratis</strong></p>
-      <div class="progress-bar-track">
-        <div id="shipping-progress-fill" class="progress-bar-fill" style="width: 0%"></div>
-      </div>
-    </div>
-
-    <ul id="cart-items" class="drawer-items">
-      <!-- Elementos del carrito inyectados por main.js -->
-    </ul>
-
-    <div class="drawer-footer">
-      <div class="summary-line">
-        <span>Subtotal</span>
-        <span id="cart-total" class="amount">0.00 €</span>
-      </div>
-      <p class="summary-shipping-note">Impuestos incluidos &bull; Gastos de envío calculados al finalizar</p>
-      <button id="checkout-btn" class="btn-checkout">Continuar con el Pago</button>
-    </div>
-  </aside>
-
-  <!-- Toast flotante de confirmación -->
-  <div id="toast" class="toast hidden">
-    <span class="toast-icon">✨</span>
-    <span id="toast-message">Producto añadido</span>
-  </div>
-
+  <!-- Footer Profesional -->
   <footer class="footer">
     <div class="container footer-content">
-      <p>© 2026 <strong>La Huerta Viva S.L.</strong> — Comprometidos con el cultivo sostenible y el comercio justo.</p>
+      
+      <!-- Marca en Footer (Se adapta sola gracias al CSS) -->
+      <div class="footer-brand brand-logo">
+        <div class="brand-shape"></div>
+        <div class="brand-text-group">
+          <span class="brand-main">Disfruta <span class="brand-y">y</span> Verdura</span>
+          <span class="brand-loc">Algeciras</span>
+        </div>
+      </div>
+
+      <div class="footer-details">
+        <p>[DIRECCIÓN PENDIENTE] &bull; [TELÉFONO PENDIENTE]</p>
+        <p class="copyright">© 2026 Disfruta y Verdura Algeciras. Todos los derechos reservados.</p>
+      </div>
     </div>
   </footer>
 
